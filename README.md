@@ -3,7 +3,9 @@
 
 Grab the article at [https://thenewstack.io/make-a-restful-json-api-go/](https://thenewstack.io/make-a-restful-json-api-go/)
 
-## Tips
+## Tips/Run
+
+* at CLI run "go run main.go" to serve at localhost:8080
 
 ## What's it all about?
 
