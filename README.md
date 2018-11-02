@@ -5,7 +5,9 @@ Grab the article at [https://thenewstack.io/make-a-restful-json-api-go/](https:/
 
 ## Tips/Run
 
-* at CLI run "go run main.go" to serve at localhost:8080
+* At CLI run "go run main.go" to serve at localhost:8080
+* I'm still a little confused by the closing of the function not being required, including it results in "exported function Index should have comment or be unexported" (will investigate and learn)
+* There's an alternative router in the form of [mux](http://www.gorillatoolkit.org/pkg/mux) from the [Gorilla Web Toolkit](http://www.gorillatoolkit.org/)
 
 ## What's it all about?
 
