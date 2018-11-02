@@ -4,9 +4,20 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"time"
 
 	"github.com/gorilla/mux"
 )
+
+// Todo creates a basic model
+type Todo struct {
+	Name      string
+	Completed bool
+	Due       time.Time
+}
+
+// Todos is a slice (an ordered collection) of the Todo model
+type Todos []Todo
 
 func main() {
 	router := mux.NewRouter().StrictSlash(true)
