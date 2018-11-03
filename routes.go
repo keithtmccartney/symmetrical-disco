@@ -1,10 +1,6 @@
 package main
 
-import (
-	"net/http"
-
-	"github.com/gorilla/mux"
-)
+import "net/http"
 
 // Route creates a basic model
 type Route struct {
@@ -16,26 +12,6 @@ type Route struct {
 
 // Routes is a slice (an ordered collection) of the Route model
 type Routes []Route
-
-// NewRouter serves the mux routing for the site
-func NewRouter() *mux.Router {
-	router := mux.NewRouter().StrictSlash(true)
-
-	for _, route := range routes {
-		var handler http.Handler
-
-		handler = route.HandlerFunc
-		handler = Logger(handler, route.Name)
-
-		router.
-			Methods(route.Method).
-			Path(route.Pattern).
-			Name(route.Name).
-			Handler(handler)
-	}
-
-	return router
-}
 
 var routes = Routes{
 	Route{
