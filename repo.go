@@ -26,7 +26,7 @@ func RepoFindTodo(id int) Todo {
 
 // RepoCreateTodo serves the creating of the Todo
 func RepoCreateTodo(t Todo) Todo {
-	currentID += 1
+	currentID++
 
 	t.ID = currentID
 
