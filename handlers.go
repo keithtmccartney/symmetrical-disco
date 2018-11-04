@@ -17,11 +17,6 @@ func Index(w http.ResponseWriter, r *http.Request) {
 
 // TodoIndex serves the todos route
 func TodoIndex(w http.ResponseWriter, r *http.Request) {
-	todos := Todos{
-		Todo{Name: "Write presentation"},
-		Todo{Name: "Host meetup"},
-	}
-
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
 
@@ -43,7 +38,7 @@ func TodoShow(w http.ResponseWriter, r *http.Request) {
 func TodoCreate(w http.ResponseWriter, r *http.Request) {
 	var todo Todo
 
-	body, err := ioutil.ReadAll(io.LimitReader(r.Body, 1048756))
+	body, err := ioutil.ReadAll(io.LimitReader(r.Body, 1048576))
 
 	if err != nil {
 		panic(err)
